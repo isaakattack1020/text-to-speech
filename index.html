@@ -15,6 +15,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">  
   </head>
+  
+  
   <body>
     <header class="mdc-toolbar">
       <div class="mdc-toolbar__row">
@@ -26,12 +28,21 @@
       </div>
     </header>
     <h1 class="mdc-typography--display1">Help I am stuck in this computer</h1>
+    <textarea>
+      
+      
+    </textarea>
+    <button id="sayText">
+      Monkeys are cool
+    </button>
     <button type="button" class="mdc-button mdc-button--raised">
       Help I am Stuck in this computer
     </button>
      <button type="button" class="mdc-button mdc-button--raised">
       Hello Isaak
     </button>
+    
+    
     
       <button type="button" class="mdc-button mdc-button--raised">
       Please help I am stuck in here
@@ -92,11 +103,14 @@
             
         // hook up event handler on the buttons
         
-         $("button").on("click", function() {
+         $("button").not("#sayText").on("click", function() {
            sayIt($(this).text());
          });
         
-
+         $("#sayText").on("click", function() {
+           sayIt($("textarea").val());
+         });
+        
 
 
         // need to be able to clear the cache to load new versions
